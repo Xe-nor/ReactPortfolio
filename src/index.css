@@ -1,13 +1,45 @@
-body {
+/* :root[data-theme="light"] {
+  --text: #060728;
+  --background: #e0dffb;
+  --primary: #191282;
+  --secondary: #ec74b0;
+  --accent: #ca1c27;
+} */
+:root {
+  --text: #d6d7f9;
+  --background: #05041f;
+  --primary: #857eed;
+  --secondary: #8d1351;
+  --accent: #ff004f;
+}
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background);
+  color: var(--text);
+  overflow-x: hidden;
+  ::selection {
+    background: var(--accent);
+    color: var(--text);
+  }
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: "Montserrat", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff004f;
 }

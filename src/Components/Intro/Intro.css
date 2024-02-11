@@ -1,0 +1,66 @@
+:root {
+  --text: #d6d7f9;
+  --background: #05041f;
+  --primary: #857eed;
+  --secondary: #8d1351;
+  --accent: #ff004f;
+}
+.ScrollSymb {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  width: 50px;
+  bottom: 50px;
+  left: 20px;
+  color: transparent;
+}
+
+#intro {
+  cursor: default;
+  font-size: 2.5rem;
+  margin: 4svh 10% 2svh 10%;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(5px);
+  height: 70svh;
+  margin-bottom: 14svh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  text-align: justify;
+}
+.intro-emphasis {
+  font-weight: 700;
+  background: linear-gradient(-45deg, #857eed, #8d1351, #ff004f);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+}
+
+.Typewriter__wrapper {
+  font-weight: 700;
+  background: linear-gradient(-45deg, #857eed, #8d1351, #ff004f);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradient 10s ease infinite;
+  background-size: 400% 400%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.Typewriter {
+  display: inline;
+}

@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Megrim&display=swap");
+
+:root {
+  --text: #d6d7f9;
+  --background: #05041f;
+  --primary: #857eed;
+  --secondary: #8d1351;
+  --accent: #ff004f;
+}
+
+#navbar {
+  margin: 4svh 10% 2svh 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(5px);
+  height: 10svh;
+}
+
+.lis {
+  padding: 1em;
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0 1.2em;
+}
+ul li {
+  list-style: none;
+  display: inline-block;
+}
+ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+}
+
+ul li a::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background: var(--accent);
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+.lis:hover a::after {
+  width: 100%;
+}
+
+#logo {
+  cursor: grab;
+  padding: 1em;
+  font-family: "Megrim", cursive;
+  color: #ff004f;
+  display: block;
+  font-size: 1.8em;
+  font-weight: 900;
+}
+#logo:active {
+  cursor: grabbing;
+}
+#logo .dev {
+  font-size: 1rem;
+  font-weight: 50;
+  color: #fff !important;
+}
