@@ -95,56 +95,56 @@ function Navbar() {
           <li>
             <Framer>
               <div className="lis" onClick={() => handleLinkClick("#about")}>
-                <a
+                <motion.a
                   href="#about"
                   variants={textVariants}
                   initial="initial"
                   animate="about"
                 >
                   About
-                </a>
+                </motion.a>
               </div>
             </Framer>
           </li>
           <Framer>
             <li>
               <div className="lis" onClick={() => handleLinkClick("#my-work")}>
-                <a
+                <motion.a
                   href="#my-work"
                   variants={textVariants}
                   initial="initial"
                   animate="portfolio"
                 >
                   Portfolio
-                </a>
+                </motion.a>
               </div>
             </li>
           </Framer>
           <Framer>
             <li>
               <div className="lis" onClick={() => handleLinkClick("#skills")}>
-                <a
+                <motion.a
                   href="#skills"
                   variants={textVariants}
                   initial="initial"
                   animate="skills"
                 >
                   Skills
-                </a>
+                </motion.a>
               </div>
             </li>
           </Framer>
           <Framer>
             <li>
               <div className="lis" onClick={() => handleLinkClick("#contact")}>
-                <a
+                <motion.a
                   href="#contact"
                   variants={textVariants}
                   initial="initial"
                   animate="contact"
                 >
                   Contact
-                </a>
+                </motion.a>
               </div>
             </li>
           </Framer>

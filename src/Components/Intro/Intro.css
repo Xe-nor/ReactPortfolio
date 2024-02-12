@@ -30,6 +30,11 @@
   text-align: justify;
 }
 .intro-emphasis {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
   font-weight: 700;
   background: linear-gradient(-45deg, #857eed, #8d1351, #ff004f);
   -webkit-text-fill-color: transparent;
@@ -40,6 +45,11 @@
 }
 
 .Typewriter__wrapper {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
   font-weight: 700;
   background: linear-gradient(-45deg, #857eed, #8d1351, #ff004f);
   -webkit-text-fill-color: transparent;

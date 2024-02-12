@@ -3,7 +3,6 @@ import Typewriter from "typewriter-effect";
 import "./Intro.css";
 import mouse from "../../Assets/scroll.png";
 import { motion } from "framer-motion";
-import { FaGamepad, FaGlobe, FaLaptopCode } from "react-icons/fa";
 
 const textVariants = {
   initial: {
@@ -70,13 +69,15 @@ function Intro() {
         </motion.div>
       </motion.h3>
       <div className="mouse">
-        <motion.img
-          variants={textVariants}
-          animate="scrollBtn"
-          src={mouse}
-          alt=""
-          className="ScrollSymb"
-        />
+        <a href="#about">
+          <motion.img
+            variants={textVariants}
+            animate="scrollBtn"
+            src={mouse}
+            alt=""
+            className="ScrollSymb"
+          />
+        </a>
       </div>
     </div>
   );
