@@ -69,6 +69,7 @@ const Sidebar = () => {
             duration: 0.25,
             x: 300,
             ease: "power1.out",
+            background: "white",
           });
           setOpen(false);
         },

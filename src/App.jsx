@@ -4,15 +4,13 @@ import Intro from "./Components/Intro/Intro.jsx";
 import Navbar from "./Components/Navbar/Navbar.jsx";
 import Sidebar from "./Components/SideMenu/Sidebar.jsx";
 import ParticlesBg from "./Components/Utility/ParticlesBg.jsx";
-import PreLoader from "./Components/Utility/PreLoader.jsx";
-import { FaArrowUp } from "react-icons/fa";
-import { IconContext } from "react-icons";
+// import PreLoader from "./Components/Utility/PreLoader.jsx";
+import GoTopBtn from "./Components/Utility/GoTop";
 
 function App() {
   return (
     <div className="App">
-      {GoTopBtn()}
-      <PreLoader />
+      <GoTopBtn />
       <ParticlesBg />
       <Sidebar />
       <section>
@@ -33,19 +31,19 @@ function App() {
 
 export default App;
 
-function GoTopBtn() {
-  return (
-    <div>
-      <IconContext.Provider value={{ className: "arrowUp" }}>
-        <a
-          className="gotopbtn"
-          data-aos="fade-up"
-          data-aos-delay="700"
-          href="#top"
-        >
-          <FaArrowUp />
-        </a>
-      </IconContext.Provider>
-    </div>
-  );
-}
+// function GoTopBtn() {
+//   return (
+//     <div>
+//       <IconContext.Provider value={{ className: "arrowUp" }}>
+//         <a
+//           className="gotopbtn"
+//           data-aos="fade-up"
+//           data-aos-delay="700"
+//           href="#top"
+//         >
+//           <FaArrowUp />
+//         </a>
+//       </IconContext.Provider>
+//     </div>
+//   );
+// }

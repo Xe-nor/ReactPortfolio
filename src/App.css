@@ -32,12 +32,13 @@ section:first-of-type {
   text-align: center;
   line-height: 50px;
   color: var(--text);
+  border: none;
   font-size: 22px;
   transition: transform 0.5s, box-shadow 0.5s, background 0.5s, color 0.75s !important;
   z-index: 5;
 }
 .gotopbtn:hover {
-  background: transparent;
+  background: transparent !important;
   color: var(--accent);
   box-shadow: 0px 8px 25px 0px var(--accent);
   transform: translateY(-0.25em) !important;
