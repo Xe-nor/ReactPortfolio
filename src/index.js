@@ -1,13 +1,17 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import "./index.css";
-import PreLoader from "./Components/Utility/PreLoader.jsx";
 import App from "./App";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <PreLoader />
-    <App />
-  </React.StrictMode>
-);
+// Function to render the app once everything has loaded
+const renderApp = () => {
+  ReactDOM.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+    document.getElementById("root")
+  );
+};
+
+// Wait for all assets and the page to load completely
+window.onload = renderApp;

@@ -13,11 +13,10 @@ html {
 }
 section {
   height: 100svh;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
 }
 section:first-of-type {
-  height: 1svh;
-  scroll-snap-align: start none;
+  height: 0.1svh;
 }
 
 .gotopbtn {

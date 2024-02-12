@@ -4,7 +4,7 @@ import Intro from "./Components/Intro/Intro.jsx";
 import Navbar from "./Components/Navbar/Navbar.jsx";
 import Sidebar from "./Components/SideMenu/Sidebar.jsx";
 import ParticlesBg from "./Components/Utility/ParticlesBg.jsx";
-// import PreLoader from "./Components/Utility/PreLoader.jsx";
+import PreLoader from "./Components/Utility/PreLoader.jsx";
 import GoTopBtn from "./Components/Utility/GoTop";
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
         <div id="top" style={{ position: "absolute", top: 0 }}></div>
       </section>
       <section>
+        <PreLoader />
         <Navbar />
         <Intro />
       </section>
