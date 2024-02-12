@@ -2,17 +2,18 @@ import "./App.css";
 import About from "./Components/About/About.jsx";
 import Intro from "./Components/Intro/Intro.jsx";
 import Navbar from "./Components/Navbar/Navbar.jsx";
-import Sidebar from "./Components/trial/Sidebar.jsx";
+import Sidebar from "./Components/SideMenu/Sidebar.jsx";
 import ParticlesBg from "./Components/Utility/ParticlesBg.jsx";
 import PreLoader from "./Components/Utility/PreLoader.jsx";
 import { FaArrowUp } from "react-icons/fa";
 import { IconContext } from "react-icons";
+
 function App() {
   return (
     <div className="App">
+      {GoTopBtn()}
       <PreLoader />
       <ParticlesBg />
-      {GoTopBtn()}
       <Sidebar />
       <section>
         <div id="top" style={{ position: "absolute", top: 0 }}></div>
@@ -48,5 +49,3 @@ function GoTopBtn() {
     </div>
   );
 }
-
-

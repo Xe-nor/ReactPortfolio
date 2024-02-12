@@ -82,3 +82,9 @@ section:first-of-type {
     width: 280px;
   }
 }
+html:not(.no-js) [data-aos^="fade"][data-aos^="fade"] {
+  opacity: 0;
+  transition-property: opacity, -webkit-transform !important;
+  transition-property: opacity, transform !important;
+  transition-property: opacity, transform, -webkit-transform !important;
+}

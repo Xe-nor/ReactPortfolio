@@ -11,10 +11,20 @@
   z-index: 999;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   bottom: 0;
   width: 400px;
   background: white;
+  transform: scale(
+    0
+  ); /* Initially hide the background *
+  /* transform: scale(0); */
+}
+.menu {
+  display: inline;
+}
+.noMenu {
+  display: none;
 }
 .sidebar .bg .links {
   position: absolute;
@@ -38,7 +48,7 @@
   border-radius: 50%;
   position: fixed;
   top: 21px;
-  left: 21px;
+  right: 21px;
   background-color: transparent;
   border: none;
   cursor: pointer;
