@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Links from "./links/Links";
 import "./sidebar.css";
@@ -34,6 +34,28 @@ const Sidebar = () => {
 
   const burger = useRef(null);
 
+  const [isVisible, setIsVisible] = useState(false);
+  const [hasTriggered, setHasTriggered] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      if (scrollPosition > windowHeight && !hasTriggered) {
+        setIsVisible(true);
+        setHasTriggered(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [hasTriggered]);
+
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.to(burger.current, {
@@ -56,6 +78,7 @@ const Sidebar = () => {
             duration: 0.25,
             x: 300,
             ease: "power1.out",
+            background: "transparent",
           });
         },
       },
@@ -63,9 +86,13 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <motion.div className="menu">
+    <motion.div className={isVisible ? "menu" : "noMenu"}>
       <motion.div className="sidebar" animate={open ? "open" : "closed"}>
-        <motion.div className="bg" ref={burger} variants={variants}>
+        <motion.div
+          className={isVisible ? "bg" : "nobg"}
+          ref={burger}
+          variants={variants}
+        >
           <Links />
         </motion.div>
         <ToggleButton setOpen={setOpen} />
