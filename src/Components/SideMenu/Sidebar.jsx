@@ -96,7 +96,7 @@ const Sidebar = () => {
         >
           <Links />
         </motion.div>
-        <ToggleButton setOpen={setOpen} />
+        {isVisible && <ToggleButton setOpen={setOpen} />}
       </motion.div>
     </motion.div>
   );
