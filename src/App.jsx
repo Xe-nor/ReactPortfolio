@@ -13,14 +13,13 @@ function App() {
       <GoTopBtn />
       <ParticlesBg />
       <Sidebar />
-      <section>
+      {/* <section>
         <div id="top" style={{ position: "absolute", top: 0 }}></div>
-      </section>
-      <section>
-        <PreLoader />
-        <Navbar />
-        <Intro />
-      </section>
+      </section> */}
+      <section></section>
+      <PreLoader />
+      <Navbar />
+      <Intro />
       <section>
         <About />
       </section>
