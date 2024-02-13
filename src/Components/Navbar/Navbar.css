@@ -59,17 +59,14 @@ ul li a::after {
 }
 
 #logo {
-  cursor: grab;
   padding: 1em;
+  cursor: default;
   z-index: 3;
   font-family: "Megrim", cursive;
   color: #ff004f;
   display: block;
   font-size: 1.8em;
   font-weight: 900;
-}
-#logo:active {
-  cursor: grabbing;
 }
 
 #logo .dev {

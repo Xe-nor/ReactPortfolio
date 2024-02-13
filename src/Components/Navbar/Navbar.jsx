@@ -1,7 +1,6 @@
 import React from "react";
 import "./Navbar.css";
 import { motion } from "framer-motion";
-import { useSpring, useMotionValue } from "framer-motion";
 import Magnet from "../Utility/magnet";
 
 const textVariants = {
@@ -48,16 +47,6 @@ const textVariants = {
 };
 
 function Navbar() {
-  const logoSpringConfig = {
-    stiffness: 1000,
-    damping: 40,
-  };
-
-  const logoX = useMotionValue(0);
-  const logoY = useMotionValue(0);
-
-  const logoXSpring = useSpring(logoX, logoSpringConfig);
-  const logoYSpring = useSpring(logoY, logoSpringConfig);
 
   const handleLinkClick = (href) => {
     window.location.href = href;
@@ -65,22 +54,16 @@ function Navbar() {
 
   return (
     <div id="navbar">
-      <motion.h2
-        id="logo"
-        variants={textVariants}
-        initial="initial"
-        animate="logo"
-        drag
-        dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-        dragTransition={{ bounceStiffness: 500, bounceDamping: 20 }}
-        dragElastic={1}
-        style={{
-          x: logoXSpring,
-          y: logoYSpring,
-        }}
-      >
-        Amarendra<span className="dev">.dev</span>
-      </motion.h2>
+      <Magnet>
+        <motion.h2
+          id="logo"
+          variants={textVariants}
+          initial="initial"
+          animate="logo"
+        >
+          Amarendra<span className="dev">.dev</span>
+        </motion.h2>
+      </Magnet>
 
       <div className="links">
         <ul>
