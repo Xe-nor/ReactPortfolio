@@ -20,6 +20,9 @@ const ParticlesComponent = () => {
   const options = useMemo(
     () => ({
       fpsLimit: 120,
+      fullScreen: {
+        enable: false,
+      },
       interactivity: {
         events: {
           onClick: {

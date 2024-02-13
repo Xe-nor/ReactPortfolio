@@ -20,9 +20,7 @@
   ); /* Initially hide the background *
   /* transform: scale(0); */
 }
-.noBg {
-  /* background-color: transparent; */
-}
+
 .menu {
   display: inline;
 }
@@ -59,4 +57,7 @@
 .sidebar button svg {
   position: relative;
   top: 4px;
+}
+.nobtn {
+  display: none;
 }

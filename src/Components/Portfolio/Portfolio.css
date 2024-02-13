@@ -1,0 +1,5 @@
+.portfolio-container {
+  background-color: darkcyan;
+  z-index: 10;
+  height: 100svh;
+}

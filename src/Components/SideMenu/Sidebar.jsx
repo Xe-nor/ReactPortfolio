@@ -88,16 +88,21 @@ const Sidebar = () => {
 
   return (
     <motion.div className={isVisible ? "menu" : "noMenu"}>
-      <motion.div className="sidebar" animate={open ? "open" : "closed"}>
-        <motion.div
-          className={isVisible ? "bg" : "nobg"}
-          ref={burger}
-          variants={variants}
-        >
-          <Links />
+      {isVisible && (
+        <motion.div className="sidebar" animate={open ? "open" : "closed"}>
+          <motion.div
+            className={isVisible ? "bg" : "nobg"}
+            ref={burger}
+            variants={variants}
+          >
+            <Links />
+          </motion.div>
+          <ToggleButton
+            setOpen={setOpen}
+            className={isVisible ? "" : "nobtn"}
+          />
         </motion.div>
-        {isVisible && <ToggleButton setOpen={setOpen} />}
-      </motion.div>
+      )}
     </motion.div>
   );
 };

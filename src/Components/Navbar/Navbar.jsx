@@ -1,9 +1,8 @@
-// "use client";
 import React from "react";
 import "./Navbar.css";
 import { motion } from "framer-motion";
 import { useSpring, useMotionValue } from "framer-motion";
-import Framer from "../Utility/magnet";
+import Magnet from "../Utility/magnet";
 
 const textVariants = {
   initial: {
@@ -50,15 +49,13 @@ const textVariants = {
 
 function Navbar() {
   const logoSpringConfig = {
-    stiffness: 1000, // Adjust stiffness as needed
-    damping: 40, // Adjust damping as needed
+    stiffness: 1000,
+    damping: 40,
   };
 
-  // Create motion values for logo x and y positions
   const logoX = useMotionValue(0);
   const logoY = useMotionValue(0);
 
-  // Apply spring animation to logo x and y positions
   const logoXSpring = useSpring(logoX, logoSpringConfig);
   const logoYSpring = useSpring(logoY, logoSpringConfig);
 
@@ -68,32 +65,27 @@ function Navbar() {
 
   return (
     <div id="navbar">
-      <Framer>
-        <div>
-          {/* Apply motion values and animation configuration to the logo */}
-          <motion.h2
-            id="logo"
-            variants={textVariants}
-            initial="initial"
-            animate="logo"
-            drag // Enable dragging
-            dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-            dragTransition={{ bounceStiffness: 500, bounceDamping: 20 }}
-            dragElastic={1} // Constrain dragging within the parent container
-            style={{
-              x: logoXSpring, // Apply spring animation to x position
-              y: logoYSpring, // Apply spring animation to y position
-            }}
-          >
-            Amarendra<span className="dev">.dev</span>
-          </motion.h2>
-        </div>
-      </Framer>
+      <motion.h2
+        id="logo"
+        variants={textVariants}
+        initial="initial"
+        animate="logo"
+        drag
+        dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+        dragTransition={{ bounceStiffness: 500, bounceDamping: 20 }}
+        dragElastic={1}
+        style={{
+          x: logoXSpring,
+          y: logoYSpring,
+        }}
+      >
+        Amarendra<span className="dev">.dev</span>
+      </motion.h2>
 
       <div className="links">
         <ul>
           <li>
-            <Framer>
+            <Magnet>
               <div className="lis" onClick={() => handleLinkClick("#about")}>
                 <motion.a
                   href="#about"
@@ -104,9 +96,9 @@ function Navbar() {
                   About
                 </motion.a>
               </div>
-            </Framer>
+            </Magnet>
           </li>
-          <Framer>
+          <Magnet>
             <li>
               <div className="lis" onClick={() => handleLinkClick("#my-work")}>
                 <motion.a
@@ -119,8 +111,8 @@ function Navbar() {
                 </motion.a>
               </div>
             </li>
-          </Framer>
-          <Framer>
+          </Magnet>
+          <Magnet>
             <li>
               <div className="lis" onClick={() => handleLinkClick("#skills")}>
                 <motion.a
@@ -133,8 +125,8 @@ function Navbar() {
                 </motion.a>
               </div>
             </li>
-          </Framer>
-          <Framer>
+          </Magnet>
+          <Magnet>
             <li>
               <div className="lis" onClick={() => handleLinkClick("#contact")}>
                 <motion.a
@@ -147,7 +139,7 @@ function Navbar() {
                 </motion.a>
               </div>
             </li>
-          </Framer>
+          </Magnet>
         </ul>
       </div>
     </div>
