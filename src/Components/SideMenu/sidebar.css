@@ -43,7 +43,7 @@
 }
 .sidebar button {
   z-index: 100;
-  position: relative;
+  /* position: relative; */
   width: 58px;
   height: 58px;
   border-radius: 50%;
@@ -52,11 +52,17 @@
   right: 21px;
   background-color: transparent;
   border: none;
+  cursor: default;
+}
+.sidebar button div {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
   cursor: pointer;
 }
-.sidebar button svg {
+.sidebar button div svg {
   position: relative;
-  top: 4px;
+  top: 20px;
 }
 .nobtn {
   display: none;

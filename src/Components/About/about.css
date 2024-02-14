@@ -1,0 +1,15 @@
+.about-container {
+  position: relative;
+  height: 100svh;
+  background: linear-gradient(180deg, #05041f, #171741);
+}
+
+.slidingTextContainer {
+  position: absolute;
+  font-size: 50vh;
+  bottom: 0px;
+  white-space: nowrap;
+  color: #ffffff09;
+  width: 50%;
+  font-weight: bold;
+}

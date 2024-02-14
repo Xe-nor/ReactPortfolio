@@ -1,5 +1,8 @@
 .portfolio-container {
   background-color: darkcyan;
+}
+.item-section {
+  height: 100svh !important;
   z-index: 10;
-  height: 100svh;
+  position: relative;
 }

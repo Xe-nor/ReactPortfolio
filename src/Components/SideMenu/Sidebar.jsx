@@ -14,7 +14,8 @@ const variants = {
     transition: {
       type: "spring",
       duration: 0.5,
-      stiffness: 20,
+      stiffness: 200,
+      damping: 40,
     },
   },
   closed: {

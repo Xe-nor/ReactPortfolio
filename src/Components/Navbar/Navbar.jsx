@@ -7,6 +7,13 @@ const textVariants = {
   initial: {
     opacity: 0,
   },
+  navbar: {
+    opacity: 1,
+    transition: {
+      delay: 3.8,
+      duration: 1,
+    },
+  },
   logo: {
     opacity: 1,
     transition: {
@@ -47,13 +54,17 @@ const textVariants = {
 };
 
 function Navbar() {
-
   const handleLinkClick = (href) => {
     window.location.href = href;
   };
 
   return (
-    <div id="navbar">
+    <motion.div
+      id="navbar"
+      variants={textVariants}
+      initial="initial"
+      animate="navbar"
+    >
       <Magnet>
         <motion.h2
           id="logo"
@@ -125,7 +136,7 @@ function Navbar() {
           </Magnet>
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -9,6 +9,14 @@ const textVariants = {
     opacity: 0,
     y: 70,
   },
+  intro: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 4.5,
+      duration: 1,
+    },
+  },
   hello: {
     opacity: 1,
     y: 0,
@@ -42,7 +50,12 @@ function Intro() {
   var dev = `Web Developer.`;
   var prog = `Programmer.`;
   return (
-    <div id="intro">
+    <motion.div
+      id="intro"
+      variants={textVariants}
+      initial="initial"
+      animate="intro"
+    >
       <motion.h3
         variants={textVariants}
         initial="initial"
@@ -79,7 +92,7 @@ function Intro() {
           />
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

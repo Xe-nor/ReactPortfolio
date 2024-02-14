@@ -1,20 +1,65 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import "./about.css";
+import { motion } from "framer-motion";
+
+const sliderVariants = {
+  initial: {
+    x: "-120%",
+    y: 0,
+  },
+  animateRight: {
+    x: "550%",
+    transition: {
+      repeat: Infinity,
+      // repeatType: "mirror",
+      duration: 10,
+    },
+  },
+  animateLeft: {
+    x: "-550%",
+    transition: {
+      repeat: Infinity,
+      // repeatType: "mirror",
+      duration: 10,
+    },
+  },
+};
 
 function About() {
+  const [scrollDirection, setScrollDirection] = useState("down");
+  const prevScrollY = useRef(window.pageYOffset);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.pageYOffset;
+      const deltaY = currentScrollY - prevScrollY.current;
+
+      if (deltaY > 0) {
+        setScrollDirection("down");
+      } else {
+        setScrollDirection("up");
+      }
+
+      prevScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div>
-      <p>
-        Abouwdawdawdwaaaaaaaaaaaaaaaaaaaaaaaaat Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Consequuntur id suscipit, dignissimos
-        cupiditate laborum aliquam reiciendis. Voluptatibus velit nemo
-        laboriosam dolore, vel ut illo similique, libero, qui optio eos ipsam!
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi eveniet voluptate quasi expedita repellendus nihil omnis temporibus eius doloribus, impedit eligendi fugiat, deleniti corrupti perferendis ad provident vel voluptas cum. Abouwdawdawdwaaaaaaaaaaaaaaaaaaaaaaaaat Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Consequuntur id suscipit, dignissimos
-        cupiditate laborum aliquam reiciendis. Voluptatibus velit nemo
-        laboriosam dolore, vel ut illo similique, libero, qui optio eos ipsam!
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi eveniet voluptate quasi expedita repellendus nihil omnis temporibus eius doloribus, impedit eligendi fugiat, deleniti corrupti perferendis ad provident vel voluptas cum.
-      </p>
-    </div>
+    <motion.div className="about-container">
+      <motion.div
+        className="slidingTextContainer"
+        variants={sliderVariants}
+        initial="initial"
+        animate={scrollDirection === "down" ? "animateRight" : "animateLeft"} // Slide right when scrolling down, left when scrolling up
+      >
+        <p>Writer content creator</p>
+      </motion.div>
+    </motion.div>
   );
 }
 
