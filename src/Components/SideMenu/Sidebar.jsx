@@ -8,7 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const variants = {
   open: {
-    clipPath: "circle(1200px at 50px 50px)",
+    clipPath: "circle(1200px at 90px 120px)",
     x: 0,
     scale: 1,
     transition: {

@@ -35,7 +35,7 @@ section:first-of-type {
   border: none;
   font-size: 22px;
   transition: transform 0.5s, box-shadow 0.5s, background 0.5s, color 0.75s !important;
-  z-index: 5;
+  z-index: 30;
 }
 .gotopbtn:hover {
   background: transparent !important;
