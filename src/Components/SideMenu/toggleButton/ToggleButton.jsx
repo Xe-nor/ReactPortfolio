@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import Framer from "../../Utility/magnet";
 import ScrollPop from "../../Utility/ScrollPop";
 
-const ToggleButton = ({ setOpen }) => {
+const ToggleButton = ({ setOpen, open }) => {
   return (
     <Framer>
       <button onClick={() => setOpen((prev) => !prev)}>
         <ScrollPop>
-          <div>
+          <div className={open ? "burger-btn" : ""}>
             <svg width="23" height="23" viewBox="0 0 23 23">
               <motion.path
                 strokeWidth="3"

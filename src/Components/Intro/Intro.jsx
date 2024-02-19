@@ -6,14 +6,12 @@ import { motion } from "framer-motion";
 
 const textVariants = {
   initial: {
-    opacity: 0,
-    y: 70,
+    y: "-200%",
   },
   intro: {
-    opacity: 1,
-    y: 0,
+    y: "0%",
     transition: {
-      delay: 4.5,
+      delay: 3.8,
       duration: 1,
     },
   },
@@ -21,7 +19,7 @@ const textVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 4.8,
+      delay: 4.2,
       duration: 1,
     },
   },
@@ -29,8 +27,8 @@ const textVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 5,
-      duration: 1.5,
+      delay: 4,
+      duration: 1,
     },
   },
 

@@ -7,31 +7,34 @@ const textVariants = {
   initial: {
     opacity: 0,
   },
+  navbar_initial: {
+    y: "-200%",
+  },
   navbar: {
-    opacity: 1,
+    y: "0%",
     transition: {
-      delay: 3.8,
+      delay: 4.3,
       duration: 1,
     },
   },
   logo: {
     opacity: 1,
     transition: {
-      delay: 4.2,
+      delay: 4.6,
       duration: 1,
     },
   },
   about: {
     opacity: 1,
     transition: {
-      delay: 4.5,
+      delay: 4.7,
       duration: 1,
     },
   },
   portfolio: {
     opacity: 1,
     transition: {
-      delay: 4.63,
+      delay: 4.9,
       duration: 1,
     },
   },
@@ -39,7 +42,7 @@ const textVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 4.76,
+      delay: 5.1,
       duration: 1,
     },
   },
@@ -47,7 +50,7 @@ const textVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 4.89,
+      delay: 5.3,
       duration: 1,
     },
   },
@@ -62,7 +65,7 @@ function Navbar() {
     <motion.div
       id="navbar"
       variants={textVariants}
-      initial="initial"
+      initial="navbar_initial"
       animate="navbar"
     >
       <Magnet>

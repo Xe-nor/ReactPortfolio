@@ -29,6 +29,7 @@ const Links = () => {
 
   return (
     <motion.div className="links" variants={variants}>
+      <div className="sidebar-header">header</div>
       {items.map((item) => (
         <motion.a
           href={`#${item}`}
@@ -38,6 +39,7 @@ const Links = () => {
           whileTap={{ scale: 0.95 }}
         >
           {item}
+          <div className="sidebar-socials"></div>
         </motion.a>
       ))}
     </motion.div>

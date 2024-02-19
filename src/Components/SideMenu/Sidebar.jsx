@@ -100,6 +100,7 @@ const Sidebar = () => {
           </motion.div>
           <ToggleButton
             setOpen={setOpen}
+            open={open}
             className={isVisible ? "" : "nobtn"}
           />
         </motion.div>
