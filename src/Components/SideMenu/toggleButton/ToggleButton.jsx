@@ -5,7 +5,10 @@ import ScrollPop from "../../Utility/ScrollPop";
 const ToggleButton = ({ setOpen, open }) => {
   return (
     <Framer>
-      <button onClick={() => setOpen((prev) => !prev)}>
+      <button
+        onClick={() => setOpen((prev) => !prev)}
+        className={open ? "" : "btn"}
+      >
         <ScrollPop>
           <div className={open ? "burger-btn" : ""}>
             <svg width="23" height="23" viewBox="0 0 23 23">

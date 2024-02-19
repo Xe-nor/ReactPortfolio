@@ -67,7 +67,11 @@ function Portfolio() {
   return (
     <div className="portfolio-container" ref={ref}>
       <div className="progress">
-        <motion.h1>Featured</motion.h1>
+        <motion.div className="featured">
+          <Magnet>
+            <motion.h1 className="h1-feature">Featured</motion.h1>
+          </Magnet>
+        </motion.div>
 
         <motion.div className="progressBar" style={{ scaleX }}></motion.div>
       </div>

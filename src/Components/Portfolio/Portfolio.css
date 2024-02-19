@@ -18,7 +18,19 @@
   text-align: center;
   color: orange;
   font-size: 36px;
+  z-index: 20;
 }
+.featured {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+.h1-feature {
+  cursor: default;
+}
+
 .progressBar {
   height: 10px;
   background-color: #fff;

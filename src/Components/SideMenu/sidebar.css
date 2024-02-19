@@ -26,6 +26,7 @@
 }
 .noMenu {
   display: none;
+  pointer-events: none;
 }
 .sidebar .bg .links {
   position: absolute;
@@ -66,6 +67,7 @@
 }
 .nobtn {
   display: none;
+  pointer-events: none;
 }
 .burger-btn {
   background-color: red;
