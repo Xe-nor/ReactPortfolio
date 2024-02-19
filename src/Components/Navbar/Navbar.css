@@ -69,8 +69,25 @@ ul li a::after {
   font-weight: 900;
 }
 
-#logo .dev {
+#logo .dev_,
+#logo .dash_ {
   font-size: 1rem;
   font-weight: 50;
-  color: #fff !important;
+  color: #fff;
+  transition: opacity 0.3s ease display 0.3s ease; /* Add smooth transition for opacity */
+}
+
+.dev_invisible,
+.dash_invisible {
+  opacity: 0; /* Initially invisible */
+  pointer-events: none; /* Prevent interaction when invisible */
+}
+
+#logo:hover .dev_invisible {
+  display: none;
+  opacity: 0; /* Make .dev invisible on hover */
+}
+
+#logo:hover .dash_visible {
+  opacity: 1; /* Make .dash visible on hover */
 }

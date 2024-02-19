@@ -1,62 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import { motion } from "framer-motion";
 import Magnet from "../Utility/magnet";
 
 const textVariants = {
-  initial: {
-    opacity: 0,
-  },
-  navbar_initial: {
-    y: "-200%",
-  },
-  navbar: {
-    y: "0%",
-    transition: {
-      delay: 4.3,
-      duration: 1,
-    },
-  },
-  logo: {
-    opacity: 1,
-    transition: {
-      delay: 4.6,
-      duration: 1,
-    },
-  },
-  about: {
-    opacity: 1,
-    transition: {
-      delay: 4.7,
-      duration: 1,
-    },
-  },
-  portfolio: {
-    opacity: 1,
-    transition: {
-      delay: 4.9,
-      duration: 1,
-    },
-  },
-  skills: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 5.1,
-      duration: 1,
-    },
-  },
-  contact: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 5.3,
-      duration: 1,
-    },
-  },
+  // Variants definitions...
 };
 
 function Navbar() {
+  const [isHovering, setIsHovering] = useState(false);
+
   const handleLinkClick = (href) => {
     window.location.href = href;
   };
@@ -74,8 +27,12 @@ function Navbar() {
           variants={textVariants}
           initial="initial"
           animate="logo"
+          onHoverStart={() => setIsHovering(true)}
+          onHoverEnd={() => setIsHovering(false)}
         >
-          Amarendra<span className="dev">.dev</span>
+          Amarendra
+          <span className={`dev_${isHovering ? "invisible" : ""}`}>.dev</span>
+          <span className={`dash_${isHovering ? "" : "invisible"}`}>.Dash</span>
         </motion.h2>
       </Magnet>
 
