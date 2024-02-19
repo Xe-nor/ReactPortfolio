@@ -1,6 +1,7 @@
 import React from "react";
 import { FaArrowUp } from "react-icons/fa";
 import { IconContext } from "react-icons";
+import RoundedButton from "./buttons";
 
 const GoTopBtn = () => {
   const scrollToTop = () => {
@@ -11,18 +12,18 @@ const GoTopBtn = () => {
   };
 
   return (
-    <div>
-      <IconContext.Provider value={{ className: "arrowUp" }}>
-        <button
-          className="gotopbtn"
-          data-aos="fade-up"
-          data-aos-delay="700"
-          onClick={scrollToTop}
-        >
+    <IconContext.Provider value={{ className: "arrowUp" }}>
+      <button
+        className="gotopbtn"
+        data-aos="fade-up"
+        data-aos-delay="700"
+        onClick={scrollToTop}
+      >
+        <RoundedButton className="toparrow">
           <FaArrowUp />
-        </button>
-      </IconContext.Provider>
-    </div>
+        </RoundedButton>
+      </button>
+    </IconContext.Provider>
   );
 };
 
