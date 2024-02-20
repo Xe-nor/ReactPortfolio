@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Navbar.css";
 import { motion } from "framer-motion";
 import Magnet from "../Utility/magnet";
@@ -6,15 +6,6 @@ import Magnet from "../Utility/magnet";
 const textVariants = {
   initial: {
     opacity: 0,
-    dev: { translateY: 0 }, // Initial position for .dev
-    dash: { translateY: 0, translateX: -100 }, // Initial position for .dash
-  },
-
-  dev_hover: {
-    translateY: -50, // Move .dev upwards by 50 pixels
-    transition: {
-      duration: 1,
-    },
   },
 
   navbar_initial: {
@@ -67,8 +58,6 @@ const textVariants = {
 };
 
 function Navbar() {
-  const [isHovering, setIsHovering] = useState(false);
-
   const handleLinkClick = (href) => {
     window.location.href = href;
   };
@@ -86,8 +75,6 @@ function Navbar() {
           variants={textVariants}
           initial="initial"
           animate="logo"
-          onHoverStart={() => setIsHovering(true)}
-          onHoverEnd={() => setIsHovering(false)}
         >
           Amarendra
           <div className="logo-effect">
