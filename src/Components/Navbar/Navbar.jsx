@@ -4,7 +4,66 @@ import { motion } from "framer-motion";
 import Magnet from "../Utility/magnet";
 
 const textVariants = {
-  // Variants definitions...
+  initial: {
+    opacity: 0,
+    dev: { translateY: 0 }, // Initial position for .dev
+    dash: { translateY: 0, translateX: -100 }, // Initial position for .dash
+  },
+
+  dev_hover: {
+    translateY: -50, // Move .dev upwards by 50 pixels
+    transition: {
+      duration: 1,
+    },
+  },
+
+  navbar_initial: {
+    y: "-200%",
+  },
+  navbar: {
+    y: "0%",
+    transition: {
+      delay: 4.3,
+      duration: 1,
+    },
+  },
+  logo: {
+    opacity: 1,
+    transition: {
+      delay: 4.6,
+      duration: 1,
+    },
+  },
+  about: {
+    opacity: 1,
+    transition: {
+      delay: 4.7,
+      duration: 1,
+    },
+  },
+  portfolio: {
+    opacity: 1,
+    transition: {
+      delay: 4.9,
+      duration: 1,
+    },
+  },
+  skills: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 5.1,
+      duration: 1,
+    },
+  },
+  contact: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 5.3,
+      duration: 1,
+    },
+  },
 };
 
 function Navbar() {
@@ -31,8 +90,10 @@ function Navbar() {
           onHoverEnd={() => setIsHovering(false)}
         >
           Amarendra
-          <span className={`dev_${isHovering ? "invisible" : ""}`}>.dev</span>
-          <span className={`dash_${isHovering ? "" : "invisible"}`}>.Dash</span>
+          <div className="logo-effect">
+            <motion.span className="dev">.dev</motion.span>
+            <motion.span className="dash">.Dash</motion.span>
+          </div>
         </motion.h2>
       </Magnet>
 
