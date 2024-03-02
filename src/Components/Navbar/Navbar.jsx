@@ -90,7 +90,7 @@ function Navbar() {
             <Magnet>
               <div className="lis" onClick={() => handleLinkClick("#about")}>
                 <motion.a
-                  href="#about"
+                  href="#about-container"
                   variants={textVariants}
                   initial="initial"
                   animate="about"
@@ -104,7 +104,7 @@ function Navbar() {
             <li>
               <div className="lis" onClick={() => handleLinkClick("#my-work")}>
                 <motion.a
-                  href="#my-work"
+                  href="#portfolio-container"
                   variants={textVariants}
                   initial="initial"
                   animate="portfolio"

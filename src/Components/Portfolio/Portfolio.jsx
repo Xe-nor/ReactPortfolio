@@ -65,7 +65,7 @@ function Portfolio() {
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
   return (
-    <div className="portfolio-container" ref={ref}>
+    <div id="Portfolio-container" ref={ref}>
       <div className="progress">
         <motion.div className="featured">
           <Magnet>

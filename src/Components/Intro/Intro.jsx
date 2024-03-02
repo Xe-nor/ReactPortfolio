@@ -40,48 +40,41 @@ const textVariants = {
       repeat: Infinity,
     },
   },
-  hover: {
-    y: "0%",
-    transition: {
-      duration: 0.5,
-    },
-  },
 };
 
 function Intro() {
-  const intro = useRef(null);
+  const card = useRef(null);
   const container = useRef(null);
-  const typer = useRef(null);
   const text = useRef(null);
   const [isHovering, setIsHovering] = React.useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      if (isHovering && intro.current && typer.current && text.current) {
-        let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-        let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-        intro.current.style.transition = "all 0.3s linear";
-        intro.current.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-        typer.current.style.transform = `translateZ(2000px)`;
-        text.current.style.transform = `translateZ(100px)`;
+      if (isHovering && card.current && text) {
+        let xAxis = -(window.innerWidth / 2 - e.pageX) / 25;
+        let yAxis = (window.innerHeight / 2 - e.pageY) / 15;
+        card.current.style.transition = "all 0.3s linear";
+        card.current.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        text.current.style.transform = "translateZ(150px)";
       }
     };
     const handleLeave = () => {
-      if (intro.current && typer.current && text.current) {
-        intro.current.style.transition = "all 1s ease";
-        intro.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
-        typer.current.style.transform = "translateZ(0px)";
-        text.current.style.transform = `translateZ(0px)`;
+      if (card.current) {
+        card.current.style.transition = "all 1s ease";
+        text.current.style.transition = "all 1s ease";
+        card.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
+        text.current.style.transform = "translateZ(0px)";
       }
     };
 
     if (container.current) {
-      container.current.addEventListener("mousemove", handleMouseMove);
-      container.current.addEventListener("mouseleave", handleLeave);
+      const currentContainer = container.current; // Create a variable to hold the ref value
+      currentContainer.addEventListener("mousemove", handleMouseMove);
+      currentContainer.addEventListener("mouseleave", handleLeave);
 
       return () => {
-        container.current.removeEventListener("mousemove", handleMouseMove);
-        container.current.removeEventListener("mouseleave", handleLeave);
+        currentContainer.removeEventListener("mousemove", handleMouseMove); // Use the variable in the cleanup function
+        currentContainer.removeEventListener("mouseleave", handleLeave); // Use the variable in the cleanup function
       };
     }
   }, [isHovering]);
@@ -104,52 +97,54 @@ function Intro() {
       variants={textVariants}
       initial="initial"
       animate="intro"
+      ref={container}
     >
-      <div className="container" ref={container}>
-        <div
-          className="card"
-          ref={intro}
-          onMouseOver={handleMouseEnter}
-          onMouseOut={handleMouseLeave}
+      <div
+        className="card"
+        ref={card}
+        onMouseOver={handleMouseEnter}
+        onMouseOut={handleMouseLeave}
+      >
+        <motion.h3
+          variants={textVariants}
+          initial="initial"
+          animate="hello"
+          className="intro-greetings"
+          ref={text}
         >
-          <motion.h3
+          Hello, my name is{" "}
+          <span className="intro-emphasis">Amarendra Dash</span>
+          {/* <motion.div
             variants={textVariants}
             initial="initial"
-            animate="hello"
-            ref={text}
-            className="intro-greetings"
+            animate="typer"
+            style={{
+              margin: 0,
+            }}
           >
-            Hello, my name is{" "}
-            <span className="intro-emphasis">Amarendra Dash</span>
-            <motion.div
-              variants={textVariants}
-              initial="initial"
-              animate="typer"
-              style={{ margin: 0 }}
-            >
-              I am a{" "}
-              <span ref={typer}>
-                <Typewriter
-                  options={{
-                    strings: [prog, dev, gamer],
-                    autoStart: true,
-                    loop: true,
-                  }}
-                />
-              </span>
-            </motion.div>
-          </motion.h3>
-          <div className="mouse">
-            <a href="#about">
-              <motion.img
-                variants={textVariants}
-                animate="scrollBtn"
-                src={mouse}
-                alt=""
-                className="ScrollSymb"
+            I am a{" "}
+            <motion.span variants={textVariants} whileHover="hoverText">
+              <Typewriter
+                options={{
+                  strings: [prog, dev, gamer],
+                  autoStart: true,
+                  loop: true,
+                }}
               />
-            </a>
-          </div>
+            </motion.span>
+          </motion.div> */}
+        </motion.h3>
+
+        <div className="mouse">
+          <a href="#about">
+            <motion.img
+              variants={textVariants}
+              animate="scrollBtn"
+              src={mouse}
+              alt=""
+              className="ScrollSymb"
+            />
+          </a>
         </div>
       </div>
     </motion.div>

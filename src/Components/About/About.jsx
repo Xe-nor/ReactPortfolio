@@ -4,7 +4,7 @@ import Marquee from "react-fast-marquee";
 
 function About() {
   return (
-    <div className="about-container">
+    <div id="About-container">
       <div className="slidingTextContainer">
         <Marquee speed={200}>&nbsp;Amarendra Dash -</Marquee>
       </div>

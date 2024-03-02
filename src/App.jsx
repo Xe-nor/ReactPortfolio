@@ -21,7 +21,7 @@ function App() {
       <GoTopBtn />
       <Sidebar />
       <div className="content">
-        <section></section>
+        <section id="Homepage-container"></section>
         <Navbar />
         <Intro />
         <section>
